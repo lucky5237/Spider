@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+</head>
+<body>
+<form name="input" action="{{ url_for('addUser') }}" method="post">
+    <p>用户名:<input type="text" name="username" placeholder="请输入用户名"></p>
+    <p>密码:<input type="password" name="password" placeholder="请输入密码"></p>
+    <p>网站:<select name="website">
+        {% for web in webList %}
+            <option value={{ web.id }}>{{ web.name }}</option>
+        {% endfor %}
+    </select></p>
+    <p><input type="submit" value="添加用户"></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户</title>
+</head>
+<body>
+<form name="input" action="{{ url_for('modifyUser') }}" method="post">
+    <p>选择用户:<select name="userList">
+        {% for user in userList %}
+            <option value={{ user.id }}}>{{ user.username+'-'+user.web.name }}</option>
+        {% endfor %}
+    </select></p>
+    <p>修改密码:<input type="password" name="password"></p>
+    <p><input type="submit" value="确认修改"></p>
+</form>
+</body>
+</html>
